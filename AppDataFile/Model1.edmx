@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище bakery_kpModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IbgridientsSmirnov">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Product" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="units" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="count" Type="float" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ingridientsProduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="IngridientsId" Type="int" Nullable="false" />
+          <Property Name="Count" Type="float" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductSmirnov">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Count" Type="float" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ingridientsProduct_Ingridients">
+          <End Role="ProductSmirnov" Type="Self.ProductSmirnov" Multiplicity="1" />
+          <End Role="ingridientsProduct" Type="Self.ingridientsProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductSmirnov">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ingridientsProduct">
+              <PropertyRef Name="IngridientsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ingridientsProduct_productLict">
+          <End Role="IbgridientsSmirnov" Type="Self.IbgridientsSmirnov" Multiplicity="1" />
+          <End Role="ingridientsProduct" Type="Self.ingridientsProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IbgridientsSmirnov">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ingridientsProduct">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище bakery_kpModelContainer">
+          <EntitySet Name="IbgridientsSmirnov" EntityType="Self.IbgridientsSmirnov" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ingridientsProduct" EntityType="Self.ingridientsProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductSmirnov" EntityType="Self.ProductSmirnov" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ingridientsProduct_Ingridients" Association="Self.FK_ingridientsProduct_Ingridients">
+            <End Role="ProductSmirnov" EntitySet="ProductSmirnov" />
+            <End Role="ingridientsProduct" EntitySet="ingridientsProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ingridientsProduct_productLict" Association="Self.FK_ingridientsProduct_productLict">
+            <End Role="IbgridientsSmirnov" EntitySet="IbgridientsSmirnov" />
+            <End Role="ingridientsProduct" EntitySet="ingridientsProduct" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bakery_kpModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="IbgridientsSmirnov">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Product" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="units" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="count" Type="Double" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ingridientsProduct" Relationship="Self.FK_ingridientsProduct_productLict" FromRole="IbgridientsSmirnov" ToRole="ingridientsProduct" />
+        </EntityType>
+        <EntityType Name="ingridientsProduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="IngridientsId" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Double" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="IbgridientsSmirnov" Relationship="Self.FK_ingridientsProduct_productLict" FromRole="ingridientsProduct" ToRole="IbgridientsSmirnov" />
+          <NavigationProperty Name="ProductSmirnov" Relationship="Self.FK_ingridientsProduct_Ingridients" FromRole="ingridientsProduct" ToRole="ProductSmirnov" />
+        </EntityType>
+        <EntityType Name="ProductSmirnov">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Count" Type="Double" Nullable="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ingridientsProduct" Relationship="Self.FK_ingridientsProduct_Ingridients" FromRole="ProductSmirnov" ToRole="ingridientsProduct" />
+        </EntityType>
+        <Association Name="FK_ingridientsProduct_productLict">
+          <End Role="IbgridientsSmirnov" Type="Self.IbgridientsSmirnov" Multiplicity="1" />
+          <End Role="ingridientsProduct" Type="Self.ingridientsProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IbgridientsSmirnov">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ingridientsProduct">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ingridientsProduct_Ingridients">
+          <End Role="ProductSmirnov" Type="Self.ProductSmirnov" Multiplicity="1" />
+          <End Role="ingridientsProduct" Type="Self.ingridientsProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductSmirnov">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ingridientsProduct">
+              <PropertyRef Name="IngridientsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bakery_kpEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="IbgridientsSmirnov" EntityType="Self.IbgridientsSmirnov" />
+          <EntitySet Name="ingridientsProduct" EntityType="Self.ingridientsProduct" />
+          <EntitySet Name="ProductSmirnov" EntityType="Self.ProductSmirnov" />
+          <AssociationSet Name="FK_ingridientsProduct_productLict" Association="Self.FK_ingridientsProduct_productLict">
+            <End Role="IbgridientsSmirnov" EntitySet="IbgridientsSmirnov" />
+            <End Role="ingridientsProduct" EntitySet="ingridientsProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ingridientsProduct_Ingridients" Association="Self.FK_ingridientsProduct_Ingridients">
+            <End Role="ProductSmirnov" EntitySet="ProductSmirnov" />
+            <End Role="ingridientsProduct" EntitySet="ingridientsProduct" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище bakery_kpModelContainer" CdmEntityContainer="bakery_kpEntities">
+          <EntitySetMapping Name="IbgridientsSmirnov">
+            <EntityTypeMapping TypeName="bakery_kpModel.IbgridientsSmirnov">
+              <MappingFragment StoreEntitySet="IbgridientsSmirnov">
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="units" ColumnName="units" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ingridientsProduct">
+            <EntityTypeMapping TypeName="bakery_kpModel.ingridientsProduct">
+              <MappingFragment StoreEntitySet="ingridientsProduct">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="IngridientsId" ColumnName="IngridientsId" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductSmirnov">
+            <EntityTypeMapping TypeName="bakery_kpModel.ProductSmirnov">
+              <MappingFragment StoreEntitySet="ProductSmirnov">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
