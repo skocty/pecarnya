@@ -1,0 +1,11 @@
+﻿<Application x:Class="ksmirnov.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ksmirnov"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FFFFD463"/>
+        </Style>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище bakery_kpModel1Container" CdmEntityContainer="bakery_kpEntities1">
+    <EntitySetMapping Name="IbgridientsSmirnov">
+      <EntityTypeMapping TypeName="bakery_kpModel1.IbgridientsSmirnov">
+        <MappingFragment StoreEntitySet="IbgridientsSmirnov">
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="units" ColumnName="units" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ingridientsProductSmirnov">
+      <EntityTypeMapping TypeName="bakery_kpModel1.ingridientsProductSmirnov">
+        <MappingFragment StoreEntitySet="ingridientsProductSmirnov">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="IngridientsId" ColumnName="IngridientsId" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductSmirnov">
+      <EntityTypeMapping TypeName="bakery_kpModel1.ProductSmirnov">
+        <MappingFragment StoreEntitySet="ProductSmirnov">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

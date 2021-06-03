@@ -1,0 +1,8 @@
+C:\Users\User\Desktop\git\pecarnya\InterProviderLibrary\InterProviderLibrary\bin\Debug\netstandard2.0\Library.deps.json
+C:\Users\User\Desktop\git\pecarnya\InterProviderLibrary\InterProviderLibrary\bin\Debug\netstandard2.0\Library.dll
+C:\Users\User\Desktop\git\pecarnya\InterProviderLibrary\InterProviderLibrary\bin\Debug\netstandard2.0\Library.pdb
+C:\Users\User\Desktop\git\pecarnya\InterProviderLibrary\InterProviderLibrary\obj\Debug\netstandard2.0\Library.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\git\pecarnya\InterProviderLibrary\InterProviderLibrary\obj\Debug\netstandard2.0\Library.AssemblyInfo.cs
+C:\Users\User\Desktop\git\pecarnya\InterProviderLibrary\InterProviderLibrary\obj\Debug\netstandard2.0\Library.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\git\pecarnya\InterProviderLibrary\InterProviderLibrary\obj\Debug\netstandard2.0\Library.dll
+C:\Users\User\Desktop\git\pecarnya\InterProviderLibrary\InterProviderLibrary\obj\Debug\netstandard2.0\Library.pdb

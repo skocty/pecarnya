@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище bakery_kpModel1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="IbgridientsSmirnov">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Product" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="units" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="count" Type="float" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ingridientsProductSmirnov">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="IngridientsId" Type="int" Nullable="false" />
+    <Property Name="Count" Type="float" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductSmirnov">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Count" Type="float" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_ingridientsProduct_Ingridients">
+    <End Role="ProductSmirnov" Type="Self.ProductSmirnov" Multiplicity="1" />
+    <End Role="ingridientsProductSmirnov" Type="Self.ingridientsProductSmirnov" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductSmirnov">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ingridientsProductSmirnov">
+        <PropertyRef Name="IngridientsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ingridientsProduct_productLict">
+    <End Role="IbgridientsSmirnov" Type="Self.IbgridientsSmirnov" Multiplicity="1" />
+    <End Role="ingridientsProductSmirnov" Type="Self.ingridientsProductSmirnov" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IbgridientsSmirnov">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ingridientsProductSmirnov">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище bakery_kpModel1Container">
+    <EntitySet Name="IbgridientsSmirnov" EntityType="Self.IbgridientsSmirnov" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ingridientsProductSmirnov" EntityType="Self.ingridientsProductSmirnov" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductSmirnov" EntityType="Self.ProductSmirnov" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ingridientsProduct_Ingridients" Association="Self.FK_ingridientsProduct_Ingridients">
+      <End Role="ProductSmirnov" EntitySet="ProductSmirnov" />
+      <End Role="ingridientsProductSmirnov" EntitySet="ingridientsProductSmirnov" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ingridientsProduct_productLict" Association="Self.FK_ingridientsProduct_productLict">
+      <End Role="IbgridientsSmirnov" EntitySet="IbgridientsSmirnov" />
+      <End Role="ingridientsProductSmirnov" EntitySet="ingridientsProductSmirnov" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
