@@ -681,7 +681,7 @@ namespace Library
     }
 }
 ```
-### Юнит тесты (Фантазии хватило только на 4)
+### Юнит тесты 
 
 ```cs
 namespace UnitTestProject1
