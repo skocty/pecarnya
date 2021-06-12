@@ -52,7 +52,7 @@ https://github.com/skocty/pecarnya
 ### Диаграмма ER:
 ![ER диаграмма](./img/ERD.png)
 ### Диаграмма Состояний:
-![State Mashine](./img/img.png)
+![State Mashine](./img/StateMashine.png)
 
 # Практическая часть
 ## Программирование С#
