@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="bakery_kpModel1.ProductSmirnov" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
         <AssociationConnector Association="bakery_kpModel1.FK_ingridientsProduct_productLict" ManuallyRouted="false" />
         <AssociationConnector Association="bakery_kpModel1.FK_ingridientsProduct_Ingridients" ManuallyRouted="false" />
+        <AssociationConnector Association="bakery_kpModel1.FK_ProductSmirnov_IbgridientsSmirnov" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

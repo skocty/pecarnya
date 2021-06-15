@@ -22,7 +22,7 @@ namespace ksmirnov
     public partial class CreateWindow : Window, INotifyPropertyChanged
     {
 
-        public List<ProductSmirnov> WorkList { get; set; }
+        public List<IbgridientsSmirnov> WorkList { get; set; }
 
         public ProductSmirnov CurrentService { get; set; }
 
@@ -40,7 +40,7 @@ namespace ksmirnov
             this.DataContext = this;
             CurrentService = Product;
             //RoleList = Core.DB.Role.ToList();
-            WorkList = Core.DB.ProductSmirnov.ToList();
+            WorkList = Core.DB.IbgridientsSmirnov.ToList();
         }
 
         private void GetImageButton_Click(object sender, RoutedEventArgs e)

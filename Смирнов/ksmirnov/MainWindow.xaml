@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ksmirnov"
         mc:Ignorable="d"
        
-     Title="Услуги авто сервиса" 
+     Title="Пекарня" 
         MinHeight="300" MinWidth="300"
         Height="450" Width="800">
     <Grid>
@@ -158,6 +158,11 @@
                                             Text=" | кол-во "/>
                                         <TextBlock 
                                             Text="{Binding Count}"/>
+                                        
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1">
+                                        <TextBlock 
+                                            Text="{Binding IbgridientsSmirnov. Product}"/>
                                     </StackPanel>
                                 </Grid>
                             </Grid>

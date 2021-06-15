@@ -10,6 +10,7 @@
     <Property Name="count" Type="Double" Nullable="false" />
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="ingridientsProductSmirnov" Relationship="Self.FK_ingridientsProduct_productLict" FromRole="IbgridientsSmirnov" ToRole="ingridientsProductSmirnov" />
+    <NavigationProperty Name="ProductSmirnov" Relationship="bakery_kpModel1.FK_ProductSmirnov_IbgridientsSmirnov" FromRole="IbgridientsSmirnov" ToRole="ProductSmirnov" />
   </EntityType>
   <EntityType Name="ingridientsProductSmirnov">
     <Key>
@@ -32,6 +33,8 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ingridientsProductSmirnov" Relationship="Self.FK_ingridientsProduct_Ingridients" FromRole="ProductSmirnov" ToRole="ingridientsProductSmirnov" />
+    <Property Name="IngredientId" Type="Int32" />
+    <NavigationProperty Name="IbgridientsSmirnov" Relationship="bakery_kpModel1.FK_ProductSmirnov_IbgridientsSmirnov" FromRole="ProductSmirnov" ToRole="IbgridientsSmirnov" />
   </EntityType>
   <Association Name="FK_ingridientsProduct_productLict">
     <End Role="IbgridientsSmirnov" Type="Self.IbgridientsSmirnov" Multiplicity="1" />
@@ -69,5 +72,21 @@
       <End Role="ProductSmirnov" EntitySet="ProductSmirnov" />
       <End Role="ingridientsProductSmirnov" EntitySet="ingridientsProductSmirnov" />
     </AssociationSet>
+    <AssociationSet Name="FK_ProductSmirnov_IbgridientsSmirnov" Association="bakery_kpModel1.FK_ProductSmirnov_IbgridientsSmirnov">
+      <End Role="IbgridientsSmirnov" EntitySet="IbgridientsSmirnov" />
+      <End Role="ProductSmirnov" EntitySet="ProductSmirnov" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_ProductSmirnov_IbgridientsSmirnov">
+    <End Type="bakery_kpModel1.IbgridientsSmirnov" Role="IbgridientsSmirnov" Multiplicity="0..1" />
+    <End Type="bakery_kpModel1.ProductSmirnov" Role="ProductSmirnov" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IbgridientsSmirnov">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProductSmirnov">
+        <PropertyRef Name="IngredientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

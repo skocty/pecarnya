@@ -18,6 +18,7 @@ namespace ksmirnov
         public IbgridientsSmirnov()
         {
             this.ingridientsProductSmirnov = new HashSet<ingridientsProductSmirnov>();
+            this.ProductSmirnov = new HashSet<ProductSmirnov>();
         }
     
         public string Product { get; set; }
@@ -28,5 +29,7 @@ namespace ksmirnov
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ingridientsProductSmirnov> ingridientsProductSmirnov { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductSmirnov> ProductSmirnov { get; set; }
     }
 }

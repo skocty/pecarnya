@@ -26,10 +26,20 @@
                     <TextBox Text="{Binding CurrentService.Count}"/>
                     <Label Content="Цена"/>
                     <TextBox Text="{Binding CurrentService.Price}"/>
-                
+            <Label Content="Ингредиенты:"/>
+            <ComboBox
+                HorizontalAlignment="left"
+                ItemsSource="{Binding WorkList}"
+                SelectedItem="{Binding CurrentService.IbgridientsSmirnov}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Product}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
 
-                
-           
+
+
 
 
             <Button Content="Картинка" Margin="7"  Click="GetImageButton_Click"></Button>

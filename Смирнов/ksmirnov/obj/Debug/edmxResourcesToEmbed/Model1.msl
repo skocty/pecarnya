@@ -25,6 +25,7 @@
     <EntitySetMapping Name="ProductSmirnov">
       <EntityTypeMapping TypeName="bakery_kpModel1.ProductSmirnov">
         <MappingFragment StoreEntitySet="ProductSmirnov">
+          <ScalarProperty Name="IngredientId" ColumnName="IngredientId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="Price" ColumnName="Price" />

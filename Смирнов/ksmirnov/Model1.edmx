@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище bakery_kpModel1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище bakery_kpModel1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="IbgridientsSmirnov">
           <Key>
             <PropertyRef Name="id" />
@@ -33,28 +33,17 @@
           <Property Name="Price" Type="float" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+          <Property Name="IngredientId" Type="int" />
         </EntityType>
-        <Association Name="FK_ingridientsProduct_Ingridients">
-          <End Role="ProductSmirnov" Type="Self.ProductSmirnov" Multiplicity="1" />
-          <End Role="ingridientsProductSmirnov" Type="Self.ingridientsProductSmirnov" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProductSmirnov">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ingridientsProductSmirnov">
-              <PropertyRef Name="IngridientsId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ingridientsProduct_productLict">
-          <End Role="IbgridientsSmirnov" Type="Self.IbgridientsSmirnov" Multiplicity="1" />
-          <End Role="ingridientsProductSmirnov" Type="Self.ingridientsProductSmirnov" Multiplicity="*" />
+        <Association Name="FK_ProductSmirnov_IbgridientsSmirnov">
+          <End Role="IbgridientsSmirnov" Type="Self.IbgridientsSmirnov" Multiplicity="0..1" />
+          <End Role="ProductSmirnov" Type="Self.ProductSmirnov" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IbgridientsSmirnov">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="ingridientsProductSmirnov">
-              <PropertyRef Name="ProductId" />
+            <Dependent Role="ProductSmirnov">
+              <PropertyRef Name="IngredientId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -62,17 +51,12 @@
           <EntitySet Name="IbgridientsSmirnov" EntityType="Self.IbgridientsSmirnov" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ingridientsProductSmirnov" EntityType="Self.ingridientsProductSmirnov" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductSmirnov" EntityType="Self.ProductSmirnov" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ingridientsProduct_Ingridients" Association="Self.FK_ingridientsProduct_Ingridients">
-            <End Role="ProductSmirnov" EntitySet="ProductSmirnov" />
-            <End Role="ingridientsProductSmirnov" EntitySet="ingridientsProductSmirnov" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ingridientsProduct_productLict" Association="Self.FK_ingridientsProduct_productLict">
+          <AssociationSet Name="FK_ProductSmirnov_IbgridientsSmirnov" Association="Self.FK_ProductSmirnov_IbgridientsSmirnov">
             <End Role="IbgridientsSmirnov" EntitySet="IbgridientsSmirnov" />
-            <End Role="ingridientsProductSmirnov" EntitySet="ingridientsProductSmirnov" />
+            <End Role="ProductSmirnov" EntitySet="ProductSmirnov" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bakery_kpModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -86,6 +70,7 @@
           <Property Name="count" Type="Double" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="ingridientsProductSmirnov" Relationship="Self.FK_ingridientsProduct_productLict" FromRole="IbgridientsSmirnov" ToRole="ingridientsProductSmirnov" />
+          <NavigationProperty Name="ProductSmirnov" Relationship="bakery_kpModel1.FK_ProductSmirnov_IbgridientsSmirnov" FromRole="IbgridientsSmirnov" ToRole="ProductSmirnov" />
         </EntityType>
         <EntityType Name="ingridientsProductSmirnov">
           <Key>
@@ -108,6 +93,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ingridientsProductSmirnov" Relationship="Self.FK_ingridientsProduct_Ingridients" FromRole="ProductSmirnov" ToRole="ingridientsProductSmirnov" />
+          <Property Name="IngredientId" Type="Int32" />
+          <NavigationProperty Name="IbgridientsSmirnov" Relationship="bakery_kpModel1.FK_ProductSmirnov_IbgridientsSmirnov" FromRole="ProductSmirnov" ToRole="IbgridientsSmirnov" />
         </EntityType>
         <Association Name="FK_ingridientsProduct_productLict">
           <End Role="IbgridientsSmirnov" Type="Self.IbgridientsSmirnov" Multiplicity="1" />
@@ -145,7 +132,23 @@
             <End Role="ProductSmirnov" EntitySet="ProductSmirnov" />
             <End Role="ingridientsProductSmirnov" EntitySet="ingridientsProductSmirnov" />
           </AssociationSet>
+          <AssociationSet Name="FK_ProductSmirnov_IbgridientsSmirnov" Association="bakery_kpModel1.FK_ProductSmirnov_IbgridientsSmirnov">
+            <End Role="IbgridientsSmirnov" EntitySet="IbgridientsSmirnov" />
+            <End Role="ProductSmirnov" EntitySet="ProductSmirnov" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_ProductSmirnov_IbgridientsSmirnov">
+          <End Type="bakery_kpModel1.IbgridientsSmirnov" Role="IbgridientsSmirnov" Multiplicity="0..1" />
+          <End Type="bakery_kpModel1.ProductSmirnov" Role="ProductSmirnov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IbgridientsSmirnov">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProductSmirnov">
+              <PropertyRef Name="IngredientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -176,6 +179,7 @@
           <EntitySetMapping Name="ProductSmirnov">
             <EntityTypeMapping TypeName="bakery_kpModel1.ProductSmirnov">
               <MappingFragment StoreEntitySet="ProductSmirnov">
+                <ScalarProperty Name="IngredientId" ColumnName="IngredientId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
