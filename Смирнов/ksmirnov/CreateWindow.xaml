@@ -18,31 +18,22 @@
             Width="280" 
             Source="{Binding CurrentService.ImagePreview}" />
 
-        <StackPanel Margin="5" Grid.Column="1">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition  Height="*"/>
-                    <RowDefinition  Height="*"/>
-                    <RowDefinition  Height="*"/>
-                </Grid.RowDefinitions>
-
-                <StackPanel Margin="25" Grid.Row="0" Orientation="Horizontal">
+        <StackPanel  Grid.Column="1">
+            
                     <Label  Content="Наименование товара"/>
-                    <TextBox Width="60" Text="{Binding CurrentService.Name}"/>
+                    <TextBox Text="{Binding CurrentService.Name}"/>
                     <Label Content="Количество"/>
-                    <TextBox Width="60" Text="{Binding CurrentService.Count}"/>
+                    <TextBox Text="{Binding CurrentService.Count}"/>
                     <Label Content="Цена"/>
-                    <TextBox Width="60" Text="{Binding CurrentService.Price}"/>
-                </StackPanel>
+                    <TextBox Text="{Binding CurrentService.Price}"/>
+                
 
                 
-            </Grid>
+           
 
 
-
-            <Button Content="Картинка" Margin="7" HorizontalAlignment="left" Click="GetImageButton_Click"></Button>
-            <Button Content="Сохранить" Margin="7" HorizontalAlignment="left" Click="SaveButton_Click"></Button>
+            <Button Content="Картинка" Margin="7"  Click="GetImageButton_Click"></Button>
+            <Button Content="Сохранить" Margin="7" Click="SaveButton_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>

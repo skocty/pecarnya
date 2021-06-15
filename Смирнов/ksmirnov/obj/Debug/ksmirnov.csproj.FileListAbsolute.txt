@@ -100,3 +100,30 @@ C:\Users\User\Desktop\git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.cs
 C:\Users\User\Desktop\git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.csproj.CopyComplete
 C:\Users\User\Desktop\git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.exe
 C:\Users\User\Desktop\git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.pdb
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\bin\Debug\ksmirnov.exe.config
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\bin\Debug\ksmirnov.exe
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\bin\Debug\ksmirnov.pdb
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\bin\Debug\EntityFramework.dll
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\bin\Debug\EntityFramework.xml
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.csprojAssemblyReference.cache
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\CreateWindow.g.cs
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\Ingridient.g.cs
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\MainWindow.g.cs
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\App.g.cs
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov_Content.g.cs
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov_MarkupCompile.cache
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov_MarkupCompile.lref
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\App.baml
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\CreateWindow.baml
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\Ingridient.baml
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\MainWindow.baml
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.g.resources
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.Properties.Resources.resources
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.csproj.GenerateResource.cache
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.csproj.CoreCompileInputs.cache
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.csproj.CopyComplete
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.exe
+C:\Users\Kirk Novos\Desktop\Git\pecarnya\Смирнов\ksmirnov\obj\Debug\ksmirnov.pdb

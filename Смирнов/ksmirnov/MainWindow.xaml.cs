@@ -249,6 +249,13 @@ namespace ksmirnov
         private void DelOrd_Click(object sender, RoutedEventArgs e)
         {
             var item = ProductListView.SelectedItem as ProductSmirnov;
+            if (item == null)
+            {
+                MessageBox.Show("Не выбран элемент");
+                return;
+            }
+
+
             Core.DB.ProductSmirnov.Remove(item);
             Core.DB.SaveChanges();
             ServiceList = Core.DB.ProductSmirnov.ToList();
@@ -258,6 +265,13 @@ namespace ksmirnov
         private void EditOrder_Click(object sender, RoutedEventArgs e)
         {
             var SelectedOrder = ProductListView.SelectedItem as ProductSmirnov;
+
+            if (SelectedOrder == null)
+            {
+                MessageBox.Show("Не выбран элемент");
+                return;
+            }
+
             var EditOrderWindow = new CreateWindow(SelectedOrder);
             if ((bool)EditOrderWindow.ShowDialog())
             {
