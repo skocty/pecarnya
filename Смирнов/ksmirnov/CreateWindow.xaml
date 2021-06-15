@@ -28,7 +28,6 @@
                     <TextBox Text="{Binding CurrentService.Price}"/>
             <Label Content="Ингредиенты:"/>
             <ComboBox
-                HorizontalAlignment="left"
                 ItemsSource="{Binding WorkList}"
                 SelectedItem="{Binding CurrentService.IbgridientsSmirnov}">
                 <ComboBox.ItemTemplate>
